@@ -23,11 +23,13 @@ typedef enum tagAnimationDirection
     UIImage *_fromImage;
     
     AnimationDirection _animationDirection;
+    CGFloat _animationDuration;
 }
 
 
 @property (strong, nonatomic) UIImage *image;
 @property (assign, nonatomic) AnimationDirection animationDirection;
+@property (assign, nonatomic) CGFloat animationDuration;
 
 
 @end

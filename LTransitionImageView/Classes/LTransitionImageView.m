@@ -12,6 +12,7 @@
 
 @synthesize image = _image;
 @synthesize animationDirection = _animationDirection;
+@synthesize animationDuration = _animationDuration;
 
 
 #pragma mark - Init
@@ -61,6 +62,8 @@
 
 - (void)initialize
 {
+    _animationDuration = 2;
+    
     [self loadGUI];
     [self bindGUI];
     [self layoutGUI];
@@ -289,7 +292,7 @@
     animation.delegate = self;
     animation.fromValue = [_maskLayer valueForKey:@"position"];
     animation.toValue = [NSValue valueWithCGPoint:newPosition];
-    animation.duration = 2;
+    animation.duration = _animationDuration;
     animation.repeatCount = 1;
     animation.removedOnCompletion = NO;
     animation.fillMode = kCAFillModeForwards;
